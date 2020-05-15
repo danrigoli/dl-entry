@@ -1,5 +1,5 @@
 
-
+// variables
 
     var form = document.getElementById("form")
     var username = document.getElementById("username")
@@ -17,7 +17,7 @@
     var emailRegex = (/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/)
 
 
-form.onsubmit = function(e)
+form.onsubmit = function(e)  // this prevents the form to submit if errors == true
 {
     if (!validations()){
      e.preventDefault()
@@ -29,6 +29,7 @@ form.onsubmit = function(e)
 }
 function validations() {
 
+    //checks if inputs are empty
 
     if(username.value === "" || username.value === null){    
         errorName.innerHTML = "Debe ingresar un nombre"
@@ -54,7 +55,7 @@ function validations() {
         return false
      }
  
-     if(emailRegex.test(email.value)!==true && email.value !== 'root'){
+     if(emailRegex.test(email.value)!==true && email.value !== 'root'){ //checks the email regex
          errorEmail.innerHTML = "El  email ingresado no es valido"
          errorEmail.setAttribute("class","invalid-feedback" )
          email.setAttribute("class", "is-invalid form-control")
@@ -62,7 +63,7 @@ function validations() {
          return false
     }
 
-    if(cellphone.value === "" || cellphone.value === null || cellphone.value.length!= 10 ){    
+    if(cellphone.value === "" || cellphone.value === null || cellphone.value.length!= 10 ){  //checks also if the cellphone is more than 10 digits   
         errorCellphone.innerHTML = "Debe ingresar un numero de telefono valido (10 caracteres)"
         errorCellphone.setAttribute("class","invalid-feedback" )
         cellphone.setAttribute("class", "is-invalid form-control")
@@ -70,7 +71,7 @@ function validations() {
         return false;
     }
 
-    if(country.value === "" || country.value === null){    
+    if(country.value === "" || country.value === null){   
         errorCountry.innerHTML = "Debe ingresar un pais"
         errorCountry.setAttribute("class","invalid-feedback" )
         country.setAttribute("class", "is-invalid form-control")
