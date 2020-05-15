@@ -20,12 +20,16 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::post('/store', 'LegislatorController@store')->name('store');
+
 Route::get('/legisladores', 'LegislatorController@display')->name('display');
 Route::get('/legisladores/mas-votados', 'LegislatorController@display_most')->name('display.votes');
 Route::get('/legisladores/fecha-mandato', 'LegislatorController@display_ending')->name('display.ending');
+
 Route::get('/edit/{id}', 'LegislatorController@edit')->name('edit');
 Route::get('/update/{id}', 'LegislatorController@update')->name('update');
+
 Route::get('/destroy/{id}', 'LegislatorController@destroy')->name('destroy');
 
 

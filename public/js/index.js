@@ -7,12 +7,14 @@
     var cellphone = document.getElementById("cellphone")
     var email = document.getElementById("email")
     var votes = document.getElementById("votes")
+    var starting = document.getElementById("starting")
     var country = document.getElementById("country")
     var errorName = document.getElementById("errorName")
     var errorSurname = document.getElementById("errorSurname")
     var errorCellphone = document.getElementById("errorCellphone")
     var errorVotes = document.getElementById("errorVotes")
     var errorCountry = document.getElementById("errorCountry")
+    var errorStarting = document.getElementById("errorStarting")
     var errorEmail = document.getElementById("errorEmail")
     var emailRegex = (/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/)
     let countries
@@ -104,11 +106,19 @@ function validations() {
         return false;
     }
 
-    if(votes.value === "" || votes.value === null){    
+    if(votes.value === "" || votes.value === null || votes.value != int){    
         errorVotes.innerHTML = "Debe ingresar los votos"
         errorVotes.setAttribute("class","invalid-feedback" )
         votes.setAttribute("class", "is-invalid form-control")
         votes.addEventListener('change', changeVotes)
+        return false;
+    }
+
+    if(starting.value === "" || starting.value === null){    
+        errorStarting.innerHTML = "Debe ingresar una fecha"
+        errorStarting.setAttribute("class","invalid-feedback" )
+        starting.setAttribute("class", "is-invalid form-control")
+        starting.addEventListener('change', changeStarting)
         return false;
     }
     
@@ -140,6 +150,12 @@ function validations() {
         errorVotes.innerHTML = ""
         errorVotes.setAttribute("class","" )
         votes.setAttribute("class", "form-control")
+    }
+
+    function changeStarting(){
+        errorStarting.innerHTML = ""
+        errorStarting.setAttribute("class","" )
+        starting.setAttribute("class", "form-control")
     }
 
     function changeCountry(){

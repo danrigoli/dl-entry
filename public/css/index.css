@@ -1,12 +1,16 @@
+/* MISC */
 main{
     min-height: 70vh;
 }
 .nav-container{
     max-width: 100%;
 }
+
 .title{
     margin: 45px;
 }
+
+/* svg fix */
 .input-group-text{
     max-height: 38px;
 }
@@ -14,16 +18,15 @@ main{
     height: 38px;
 }
 
-#ext{
-    background-color: gray;
-}
-.btn{
+/* submit btn */
+.btn-dark{
     background-color: rgb(236, 171, 49);
     border: rgb(87, 87, 87);
     width: 100%;
     color: black;
 }
 
+/* footer */
 a:hover{
     text-decoration:none;
 }

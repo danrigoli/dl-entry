@@ -1,8 +1,5 @@
 @extends('layouts.app')
-@section('head')
-    <link href="{{ asset('css/index.css') }}" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
-@endsection
+
 @section('content')
 <div class="container">
     <h1 class="title">Agrega un Legislador!</h1>
@@ -102,19 +99,17 @@
                     <path fill-rule="evenodd" d="M6.5 7a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm-9 3a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm-9 3a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
                     </svg></span>
                 </div>
-                <input type="date" id='starting' name="starting" class="form-control" aria-label="starting" required>
+                <input type="date" id='starting' name="starting" class="form-control" aria-label="starting">
+                <p id="errorStarting"></p>
             </div>
                 <div class="mb-3 col">
                 <button type="submit" class="btn btn-dark">Agregar legislador</button>
                 </div>
         </div>
-        <p> Ingresa la fecha de inicio del legislador</p>
-
       </form>
 @endsection
 
 @section('scripts')
 <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 <script src ="{{asset('js/index.js')}}"></script>
-
 @endsection

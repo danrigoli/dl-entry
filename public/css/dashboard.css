@@ -1,3 +1,4 @@
+/* MISC */
 .container{
     max-width: 100%;
 }
@@ -22,6 +23,8 @@ span{
     letter-spacing: .6px;
 } 
 
+/* LEGISLADOR TITLE */
+
 .title{
     font-size: 2.4em;
     text-transform: uppercase;
@@ -35,15 +38,20 @@ span{
     color: rgb(236, 171, 49);
     transition:all 1s ease 0s;
 }
+
+/* ORDENAR POR DROPDOWN */
+
 .dropdown{
     margin-right: 0px;
     padding: 2%;
 }
 .dropdown-toggle{
-padding: 5%;
+    background-color: rgb(236, 171, 49);
+    color: black;
+    padding: 5%;
 }
 
 .dropdown-toggle:hover{
-    background-color: rgb(236, 171, 49);
-    color: black;
+    background-color: rgb(41, 41, 41);
+    color: rgb(255, 255, 255);
 }
