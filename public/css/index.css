@@ -1,0 +1,16 @@
+
+.nav-container{
+    max-width: 100%;
+}
+.title{
+    margin: 45px;
+}
+.input-group-text{
+    max-height: 38px;
+}
+.btn{
+    background-color: rgb(212, 140, 6);
+    border: rgb(87, 87, 87);
+    width: 100%;
+    color: black;
+}

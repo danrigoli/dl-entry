@@ -1,0 +1,23 @@
+.container{
+    max-width: 100%;
+}
+.jumbotron{
+    margin-bottom: 60px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+span{
+    text-transform: uppercase;
+}
+.buttons{
+    padding-top: 5%;
+}
+
+.btn{
+    width:10vw;
+}
+
+.lower{
+    text-transform: uppercase;
+    letter-spacing: .6px;
+}
