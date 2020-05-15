@@ -1,4 +1,6 @@
-
+main{
+    min-height: 70vh;
+}
 .nav-container{
     max-width: 100%;
 }
@@ -20,4 +22,30 @@
     border: rgb(87, 87, 87);
     width: 100%;
     color: black;
+}
+
+a:hover{
+    text-decoration:none;
+}
+.section-padding {
+	padding: 60px 0;
+}
+.bottom {
+    background-color: #0a1c2e;
+}
+.bottom .text {
+    color: #e5e5e5;
+    font-weight: 600;
+}
+.text a {
+    color: #f2ff49;
+    margin-left: 3px;
+    padding-right: 3px;
+}
+
+.bottom .text span {
+    color: #d1caca;
+}
+.bottom  a:hover{
+    color: #6c6d83;
 }

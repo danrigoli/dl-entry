@@ -6,9 +6,9 @@
 
 @section('content')
 <div class="container"> 
-    <div class="row header justify-content-center">
+    <div class="row header justify-content-between">
     <h1 class="title animate__animated animate__flash">Legisladores</h1>
-    <div class="dropdown">
+    <div class="dropdown row">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ordenar por:</button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="{{route('display.votes')}}">Mas Votado</a>
@@ -16,7 +16,7 @@
         </div>
     </div>
     </div>
-    <div class="row justify-content-around ">
+    <div class="row justify-content-around">
         @foreach ($legislators as $legislator)
         <div class="jumbotron col-xl-3 col-lg-4 col-md-5 col-sm-8">
             <h1 class="display-4">{{$legislator->name}}</h1>

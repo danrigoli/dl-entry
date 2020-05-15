@@ -12,6 +12,7 @@
     <!-- Scripts -->
 
     <!-- Fonts -->
+    <link href="{{ asset('css/index.css') }}" rel="stylesheet">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
@@ -32,7 +33,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container nav-container">
-                <a class="navbar-brand" href="directoriolegislativo.org">
+                <a class="navbar-brand" href="https://directoriolegislativo.org">
                    <img src={{asset('images/logo.jpg')}} width="300">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -80,10 +81,20 @@
                 </div>
             </div>
         </nav>
-
         <main class="py-4">
             @yield('content')
         </main>
+        <div class="bottom section-padding">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<div class="text">
+							<span>2020 | </span>Made by<a href="https://github.com/danrigoli" class="transition">@danrigoli</a> for Directorio Legislativo
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
