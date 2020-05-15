@@ -16,3 +16,4 @@ Procedimiento:
     -No hay un diseno muy estetico dado a que no encontre un diseno a seguir de su marca.
     -El uso de CSS esta la mayoria con Bootstrap y uso selects de Select2, como tambien Animate.css.
     -El input automatico lo puse atras del server para que no pueda ser hardcodeado.
+    -Para el dashboard de Legisladores podria haber elegido un formato de tabla, pero, puse con 'cards' para que logre mas impacto visual, y es paginado cada 10 legisladores
