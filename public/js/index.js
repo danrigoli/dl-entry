@@ -15,6 +15,30 @@
     var errorCountry = document.getElementById("errorCountry")
     var errorEmail = document.getElementById("errorEmail")
     var emailRegex = (/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/)
+    let countries
+
+    
+        fetch("https://restcountries.eu/rest/v2/all")
+        .then(res => res.json())
+        .then(data => initialize(data))
+        .catch(err => console.log('Error:', err))
+
+        function initialize(countriesData){
+            countries = countriesData;
+            let select = document.getElementById('country');
+            let selectExt = document.getElementById('ext')
+            for (let i=0 ; i< countries.length; i++) {
+                let options = document.createElement('option') 
+                options.value = countries[i].name
+                options.innerHTML = countries[i].name
+                select.appendChild(options)
+                // options.innerHTML = countries[i].callingCodes
+                // selectExt. appendChild(options)
+            }
+        }
+
+        $('.single').select2();
+
 
 
 form.onsubmit = function(e)  // this prevents the form to submit if errors == true

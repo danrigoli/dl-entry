@@ -8,6 +8,13 @@
 .input-group-text{
     max-height: 38px;
 }
+.single{
+    height: 38px;
+}
+
+#ext{
+    background-color: gray;
+}
 .btn{
     background-color: rgb(212, 140, 6);
     border: rgb(87, 87, 87);

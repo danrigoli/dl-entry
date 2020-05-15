@@ -14,6 +14,16 @@ class LegislatorController extends Controller
         $legislators = Legislator::paginate(10);
         return view('dashboard', compact('legislators'));
     }
+    public function display_most() // displays legislators on dashboard by most votes
+    {
+        $legislators = Legislator::orderBy('votes', 'desc')->paginate(10);
+        return view('dashboard', compact('legislators'));
+    }
+    public function display_ending() // displays legislators on dashboard by ending
+    {
+        $legislators = Legislator::orderBy('ending')->paginate(10);
+        return view('dashboard', compact('legislators'));
+    }
     public function store(Request $request)
     {
         $this->validate($request, [ //validating the inputs (email->unique)

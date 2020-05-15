@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('head')
     <link href="{{ asset('css/index.css') }}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
 @endsection
 @section('content')
 <div class="container">
@@ -37,6 +38,10 @@
                     </svg></span>
                 </div>
                 <input type="text" id=email name="email" class="form-control" placeholder="Ingresar el email del legislador..." aria-label="email">
+                @if ($errors->has('email'))
+                    <script>email.setAttribute("class", "is-invalid form-control")</script>
+                    <p class="invalid-feedback">{{ $errors->first('email') }}</p>
+                @endif
                 <p id="errorEmail"></p>
             </div>
             <div class="input-group col mb-3">
@@ -62,14 +67,10 @@
                 <input type="text" name="address" class="form-control" placeholder="Ingresar la direccion del legislador..." aria-label="address">
             </div>
             <div class="input-group col mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1"><svg class="bi bi-geo" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11 4a3 3 0 11-6 0 3 3 0 016 0z"/>
-                    <path d="M7.5 4h1v9a.5.5 0 01-1 0V4z"/>
-                    <path fill-rule="evenodd" d="M6.489 12.095a.5.5 0 01-.383.594c-.565.123-1.003.292-1.286.472-.302.192-.32.321-.32.339 0 .013.005.085.146.21.14.124.372.26.701.382.655.246 1.593.408 2.653.408s1.998-.162 2.653-.408c.329-.123.56-.258.701-.382.14-.125.146-.197.146-.21 0-.018-.018-.147-.32-.339-.283-.18-.721-.35-1.286-.472a.5.5 0 11.212-.977c.63.137 1.193.34 1.61.606.4.253.784.645.784 1.182 0 .402-.219.724-.483.958-.264.235-.618.423-1.013.57-.793.298-1.855.472-3.004.472s-2.21-.174-3.004-.471c-.395-.148-.749-.336-1.013-.571-.264-.234-.483-.556-.483-.958 0-.537.384-.929.783-1.182.418-.266.98-.47 1.611-.606a.5.5 0 01.595.383z" clip-rule="evenodd"/>
-                    </svg></span>
-                </div>
-                <input type="text" id="country" name="country" class="form-control" placeholder="Ingresar el pais del legislador..." aria-label="country">
+                
+                <select id="country" class="single form-control">
+                <option value='null'>Seleccionar pais</option>
+                </select>
                 <p id="errorCountry"></p>
             </div>
         </div>
@@ -85,12 +86,7 @@
                 <p id="errorVotes"></p>
             </div>
             <div class="input-group col mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1"><svg class="bi bi-people" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.995-.944v-.002.002zM7.022 13h7.956a.274.274 0 00.014-.002l.008-.002c-.002-.264-.167-1.03-.76-1.72C13.688 10.629 12.718 10 11 10c-1.717 0-2.687.63-3.24 1.276-.593.69-.759 1.457-.76 1.72a1.05 1.05 0 00.022.004zm7.973.056v-.002.002zM11 7a2 2 0 100-4 2 2 0 000 4zm3-2a3 3 0 11-6 0 3 3 0 016 0zM6.936 9.28a5.88 5.88 0 00-1.23-.247A7.35 7.35 0 005 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 015 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10c-1.668.02-2.615.64-3.16 1.276C1.163 11.97 1 12.739 1 13h3c0-1.045.323-2.086.92-3zM1.5 5.5a3 3 0 116 0 3 3 0 01-6 0zm3-2a2 2 0 100 4 2 2 0 000-4z" clip-rule="evenodd"/>
-                    </svg></span>
-                </div>
-                <select id="party" class="form-control">
+                <select id="party" class="single form-control">
                     <option value=0 selected>Elegir partido politico</option>
                     <option value="Azul">Azul</option>
                     <option value="Rojo">Rojo</option>
@@ -118,6 +114,7 @@
 @endsection
 
 @section('scripts')
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 <script src ="{{asset('js/index.js')}}"></script>
 
 @endsection
