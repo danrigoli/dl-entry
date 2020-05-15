@@ -20,4 +20,27 @@ span{
 .lower{
     text-transform: uppercase;
     letter-spacing: .6px;
+} 
+
+.title{
+    text-transform: uppercase;
+    padding: 2%;
+    color:black;
+    transition:all 1s ease 0s;
+}
+
+.title:hover{
+    color: rgb(236, 171, 49);
+    transition:all 1s ease 0s;
+}
+.dropdown{
+    padding: 2%;
+}
+.dropdown-toggle{
+padding: 5%;
+}
+
+.dropdown-toggle:hover{
+    background-color: rgb(236, 171, 49);
+    color: black;
 }

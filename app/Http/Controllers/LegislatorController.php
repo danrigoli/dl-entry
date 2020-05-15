@@ -30,7 +30,7 @@ class LegislatorController extends Controller
             "name" => 'required',
             "surname"  => 'required',
             "email" => 'required|unique:legislators',
-            "cellphone" => 'required|integer',
+            "cellphone" => 'required|tel',
             "votes" => "integer",
             "country" => "required|string",
             "starting" => "required|date",

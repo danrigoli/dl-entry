@@ -6,8 +6,8 @@
 
 @section('content')
 <div class="container"> 
-    <div class="row justify-content-center">
-    <h1 class="title">Legisladores</h1>
+    <div class="row header justify-content-center">
+    <h1 class="title animate__animated animate__flash">Legisladores</h1>
     <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ordenar por:</button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -19,7 +19,8 @@
     <div class="row justify-content-around ">
         @foreach ($legislators as $legislator)
         <div class="jumbotron col-xl-3 col-lg-4 col-md-5 col-sm-8">
-            <h1 class="display-4">{{$legislator->name}} {{$legislator->surname}}</h1>
+            <h1 class="display-4">{{$legislator->name}}</h1>
+            <h1 class="display-4">{{$legislator->surname}}</h1>
             <p class="lead">Email: <a href="mailto:{{$legislator->email}}">{{$legislator->email}}</a> </p>
             <p class="lead">Telefono: {{$legislator->cellphone}}</p>
             <span class="lead">{{$legislator->party}}, {{$legislator->votes}} votos</span>
@@ -51,16 +52,14 @@
 @endsection
 @section('scripts')
 <script>
-    var points = [40, 100, 1, 5, 25, 10];
-    document.getElementById("demo").innerHTML = points;  
-    
-    function myFunction1() {
-      points.sort();
-      document.getElementById("demo").innerHTML = points;
-    }
-    function myFunction2() {
-      points.sort(function(a, b){return a - b});
-      document.getElementById("demo").innerHTML = points;
-    }
+ $(document).ready(function(e){
+                window.setInterval(function(){
+                const title = document.querySelector('.title')
+                title.className = 'title animate__animated animate__flash'}
+                , 5000); 
+                window.setInterval(function(){
+                const title = document.querySelector('.title')
+                title.className = 'title'}
+                , 5500);});
     </script>
 @endsection

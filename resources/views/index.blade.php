@@ -66,9 +66,9 @@
                 </div>
                 <input type="text" name="address" class="form-control" placeholder="Ingresar la direccion del legislador..." aria-label="address">
             </div>
-            <div class="input-group col mb-3">
+            <div class="input-group col-lg-6 col-md-12 mb-3">
                 
-                <select id="country" class="single form-control">
+                <select id="country" name="country" class="single form-control">
                 <option value='null'>Seleccionar pais</option>
                 </select>
                 <p id="errorCountry"></p>
@@ -85,8 +85,8 @@
                 <input type="number" id="votes" name="votes" class="form-control" placeholder="Ingresar la cantidad de votos del legislador..." aria-label="votes">
                 <p id="errorVotes"></p>
             </div>
-            <div class="input-group col mb-3">
-                <select id="party" class="single form-control">
+            <div class="input-group col-lg-6 col-md-12 mb-3">
+                <select id="party" name="party" class="single form-control">
                     <option value=0 selected>Elegir partido politico</option>
                     <option value="Azul">Azul</option>
                     <option value="Rojo">Rojo</option>

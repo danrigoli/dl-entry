@@ -11,6 +11,6 @@ class LegislatorSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(App\Legislator::class, 10)->create();
     }
 }

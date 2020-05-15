@@ -32,6 +32,7 @@
                 options.value = countries[i].name
                 options.innerHTML = countries[i].name
                 select.appendChild(options)
+                console.log(options)
                 // options.innerHTML = countries[i].callingCodes
                 // selectExt. appendChild(options)
             }
@@ -95,10 +96,10 @@ function validations() {
         return false;
     }
 
-    if(country.value === "" || country.value === null){   
+    if(country.value === "null" || country.value === null){   
         errorCountry.innerHTML = "Debe ingresar un pais"
         errorCountry.setAttribute("class","invalid-feedback" )
-        country.setAttribute("class", "is-invalid form-control")
+        country.setAttribute("class", "single is-invalid form-control d-none")
         country.addEventListener('change', changeCountry)
         return false;
     }
@@ -144,7 +145,7 @@ function validations() {
     function changeCountry(){
         errorCountry.innerHTML = ""
         errorCountry.setAttribute("class","" )
-        country.setAttribute("class", "form-control")
+        country.setAttribute("class", "single form-control")
     }
 
     return true;
